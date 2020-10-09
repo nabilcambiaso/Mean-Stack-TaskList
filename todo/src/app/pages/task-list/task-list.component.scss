@@ -1,0 +1,92 @@
+
+@import '../../../main-style.scss';
+
+
+
+.mainContent{
+  @include centered();
+  .taskContainer{
+     display: flex;
+     height: 100%;
+     width: 100%;
+     max-height: 580px;
+     max-width: 900px;
+     .sideBar{
+       display: flex;
+       flex-direction: column;
+       width: 35%;
+       padding: 3%;
+       border-radius: 10px 0 0 10px;
+       .listMenu{
+         display: flex;
+         flex-direction: column;
+         flex-grow:1;
+         overflow: hidden;
+         overflow-y: scroll;
+         .listMenuItem{
+           display: flex;
+           align-items: center;
+           padding: 10px 15px;
+           margin-bottom:0.5rem;
+           background-color: $light;
+           color:$listGray;
+           &:hover{
+             background-color: #f1eeee;
+             color: $dark-green;
+           }
+           &.active{
+             background-color: $active;
+
+           }
+         }
+       }
+     }
+     .listContent{
+       display:flex;
+       flex-grow:1;
+       border-radius: 0 10px 10px 0;
+       padding: 3%;
+       .taskList{
+         position: relative;
+         display: flex;
+         flex-direction: column;
+         flex-grow: 1;
+         width: 100%;
+         .taskListItem{
+           display: flex;
+           background-color: rgb(247, 243, 243);
+           color:$dark-green;
+           margin-bottom: 0.5rem;
+           border-radius: 10px;
+           &:not(.completed){
+            cursor: pointer;
+            &:hover{
+              transition: 1s ease;
+              transform: scale(0.9);
+            }
+           }
+
+           &.completed{
+             text-decoration: line-through;
+           }
+
+         }
+         .circle-add-button{
+           position: absolute;
+           bottom: 0;
+           right: 0;
+           height: 50px;
+           width: 50px;
+           border-radius: 50%;
+           border: none;
+         }
+        }
+
+     }
+  }
+  .title{
+    font-family: 'lato';
+    text-transform: uppercase;
+    font-size: 1.2rem;
+  }
+}

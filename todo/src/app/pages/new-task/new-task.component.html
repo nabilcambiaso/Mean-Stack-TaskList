@@ -1,0 +1,13 @@
+<div class="centered-item">
+
+  <div class="modal-box">
+   <h1>Create New Task</h1>
+   <br>
+   <input #inputNewTask class="input is-rounded has-background-light" type="text" placeholder="New Task">
+   <div class="buttons is-right">
+    <button class="button has-background-light" routerLink="/">Cancel</button>
+    <button class="button is-primary" (click)="addNewTask(inputNewTask.value)">Create</button>
+   </div>
+
+  </div>
+  </div>

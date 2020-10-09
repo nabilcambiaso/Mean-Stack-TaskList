@@ -1,0 +1,47 @@
+
+<div class="mainContent">
+
+ <div class="taskContainer">
+
+  <!--list-->
+ <div class="sideBar has-background-white">
+   <!--side bar title-->
+   <h3  class="title has-text-primary">List</h3>
+   <!--list menu-->
+   <div class="listMenu">
+     <a class="listMenuItem "*ngFor="let list of lists" [routerLink]="['/lists',list._id]" routerLinkActive="active">
+      <p>{{list.title}}</p>
+    </a>
+   </div>
+   <button class="button has-background-primary has-text-white" routerLink='/NewList'>+ New List</button>
+ </div>
+
+ <!--tasks-->
+ <div class="listContent has-background-light">
+   <!--list of content title-->
+
+   <div class="taskList">
+     <h3 class="title has-text-primary">Tasks</h3>
+     <!--<div class="taskListItem completed">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, repellat
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, repellat.</p>
+     </div>-->
+      <div *ngIf="this.tasks.length>0">
+        <div class="taskListItem"  *ngFor="let task of tasks">
+        <p >{{task.title}}</p>
+        </div>
+      </div>
+      <div *ngIf="this.tasks.length<=0">
+       <div class="taskListItem"  >
+           <p >Empty</p>
+       </div>
+      </div>
+      <button routerLink="./NewTask" class="circle-add-button button is-primary has-text-white">
+        +Add
+      </button>
+   </div>
+ </div>
+
+ </div>
+
+</div>

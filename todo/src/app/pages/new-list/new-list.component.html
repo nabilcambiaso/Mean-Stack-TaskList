@@ -1,0 +1,13 @@
+<div class="centered-item">
+
+<div class="modal-box">
+ <h1>Create New List</h1>
+ <br>
+ <input #inputNewList class="input is-rounded has-background-light" type="text" placeholder="New List">
+ <div class="buttons is-right">
+  <button class="button has-background-light" routerLink="/">Cancel</button>
+  <button class="button is-primary" (click)="addNewList(inputNewList.value)">Create</button>
+ </div>
+
+</div>
+</div>
